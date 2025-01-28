@@ -47,7 +47,7 @@ export default function Navigation() {
                     <a href="/" className=' hover:text-pink-600'>Home</a>
                     <a href="/application" className={`' hover:text-pink-600' ${path.includes('/application') && 'text-pink-600'}`}>Application</a>
                     {/* <a href="" className=' hover:text-pink-600'>Enrollment</a> */}
-                    <a href="/#events" className=' hover:text-pink-600'>Events</a>
+                    {/* <a href="/#events" className=' hover:text-pink-600'>Events</a> */}
                     <a href="/#news" className={`' hover:text-pink-600' ${path.includes('/news') && 'text-pink-600'}`}>News</a>
                     <a href="/#about" className={`' hover:text-pink-600' ${path.includes('/about') && 'text-pink-600'}`}>About Us</a>
 
@@ -63,7 +63,7 @@ export default function Navigation() {
                 <a href="/" className=' hover:text-pink-600'>Home</a>
                 <a href="/application" className={`' hover:text-pink-600' ${path.includes('/application') && 'text-pink-600'}`}>Application</a>
                 {/* <a href="" className=' hover:text-pink-600'>Enrollment</a> */}
-                <a href="/#events" className=' hover:text-pink-600'>Events</a>
+                {/* <a href="/#events" className=' hover:text-pink-600'>Events</a> */}
                 <a href="/#news" className={`' hover:text-pink-600' ${path.includes('/news') && 'text-pink-600'}`}>News</a>
                 <a href="/#about" className={`' hover:text-pink-600' ${path.includes('/about') && 'text-pink-600'}`}>About Us</a>
 

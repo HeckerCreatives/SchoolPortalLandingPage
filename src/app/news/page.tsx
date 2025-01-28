@@ -1,21 +1,34 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import Navigation from '../homepage/Navigation'
-import Footer from '../homepage/Footer'
 import axios, { AxiosError } from 'axios'
+import Navigation from '@/app/homepage/Navigation'
+import Footer from '@/app/homepage/Footer'
+import { useRouter } from 'next/router'
+import { useSearchParams } from 'next/navigation'
+import Breadcrumb from '@/components/common/Breadcrumb'
 
 type Data = {
   content: string
-createdAt: string
-id: string
-image: string
-title: string
+  createdAt: string
+  id: string
+  image: string
+  title: string
+  writer: string
 }
+
 
 export default function page() {
 
   const [loading, setLoading] = useState(false)
   const [list, setList] = useState<Data[]>([])
+  const [slug, setSlug] = useState('')
+
+  const searchParams = useSearchParams();
+  const title = searchParams.get('id')
+
+  const findList = list.find((item) => item.title === title)
+  console.log(slug, findList)
+
 
 
   useEffect(() => {
@@ -53,45 +66,54 @@ export default function page() {
       return url;
     };
 
+    const formatDate = (dateString: string): string => {
+      const date = new Date(dateString);
+    
+      const options: Intl.DateTimeFormatOptions = { month: "long", day: "numeric", year: "numeric" };
+    
+      return date.toLocaleDateString("en-US", options); // Example output: "December 2, 2024"
+    };
+    
+
     
   return (
-    <div className=" relative h-auto md:h-screen w-full bg-white flex flex-col overflow-x-hidden overflow-y-auto">
+    <div className=" relative h-auto md:h-screen w-full bg-white flex flex-col overflow-x-hidden overflow-y-auto font-serif">
       <Navigation/>
-      <div className=" h-auto w-full flex flex-col items-center justify-center gap-4 py-20">
-        <h2 className=' text-2xl font-medium font-serif'>News</h2>
+      <div className=" h-auto w-full flex flex-col items-center justify-center gap-4 py-20 px-4">
 
-        
-        {loading === true ? (
+        <div className=' w-full max-w-[1240px] flex flex-col gap-4'>
+          <Breadcrumb slug={decodeURIComponent(slug)}/>
 
-          <div className=' w-full h-[300px] flex items-center justify-center'>
-            <span className='loader2'></span>
+          <h2 className=' text-2xl font-semibold'>{findList?.title}</h2>
+
+          <div className=' w-full flex items-center gap-2 text-sm text-zinc-500'>
+            <p className=' '>{formatDate(findList?.createdAt || '')} </p>
+            <p>-</p>
+            <p className=''>Published by: <span className=' text-pink-600'>{findList?.writer}</span></p>
+
           </div>
+
+          {loading === true ? (
+
+            <div className=' w-full h-[300px] flex items-center justify-center'>
+              <span className='loader2'></span>
+            </div>
           ): (
-          <div className=' w-full max-w-[1240px] grid grid-cols-4 gap-4 mt-12'>
-            {list.map((item, index) => (
-               <div key={index} className=' w-full h-full bg-zinc-100 flex flex-col'>
-                  <div className=' w-full aspect-video bg-pink-100'
-                  style={{
-                    backgroundImage: `url(${bg(item?.image)})`, // Calls your `bg` function
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                  >
-                  </div>
-  
-                  <div className=' w-full h-full flex flex-col gap-2 p-4 text-xs'>
-                    <p className=' text-lg font-medium underline font-serif'>{item?.title}</p>
-                    <p className=' text-zinc-500 text-xs'>Lorem Ipsum School</p>
-                    <a href={`/news/${item.title}`} className=' border-[1px] border-pink-600 bg-pink-600 text-white px-3 py-1 text-[.6rem] font-medium w-fit mt-4'>Read more</a>
-  
-                  </div>
-  
+            <div className=' w-full flex flex-col gap-8'>
+              <div className=' w-full text-sm'>
+                <p className=' whitespace-pre-wrap'>{findList?.content}</p>
               </div>
-            ))}
-          
-          </div>
-        )}
 
+              <div className=' w-full'>
+                <img src={`${bg(findList?.image || '')}`} alt="" />
+
+              </div>
+
+            </div>
+          )}
+         
+
+        </div>
 
        
       </div>

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Poppins, Open_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
+import { Suspense } from "react";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -32,7 +33,10 @@ export default function RootLayout({
       <body
         className={`${poppins.className} antialiased`}
       >
+        <Suspense>
         {children}
+
+        </Suspense>
         <Toaster
               position="top-center"
               reverseOrder={false}

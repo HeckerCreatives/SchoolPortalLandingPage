@@ -85,7 +85,7 @@ export default function Announcements() {
                         </div>
 
                         <div className=' w-full h-full flex flex-col gap-2 p-4 text-xs'>
-                            <a href={`/news/${list[0]?.title}`} className=' text-lg font-medium underline'>{list[0]?.title}</a>
+                            <a href={`/news?id=${list[0]?.title}`} className=' text-lg font-medium underline'>{list[0]?.title}</a>
                             <p className=' text-zinc-500 text-xs'>Published by: {list[0]?.writer}</p>
                         </div>
 
@@ -108,7 +108,7 @@ export default function Announcements() {
 
                                 <div className=' w-full h-full flex flex-col gap-2 p-4 text-xs'>
                                     {/* <p className=' flex items-center gap-1 text-pink-500 text-[.6rem]'><MapPin size={12}/>December 15, 2024</p> */}
-                                    <a href={`/news/${list[1]?.title}`} className=' text-lg font-medium underline'>{list[1]?.title}</a>
+                                    <a href={`/news?id=${list[0]?.title}`} className=' text-lg font-medium underline'>{list[1]?.title}</a>
                                     <p className=' text-zinc-500 text-xs'>Published by: {list[1]?.writer}</p>
 
                                     {/* <p className=' text-zinc-500 whitespace-pre-line'>{list[1]?.content.slice(0,100)} ...</p> */}
@@ -129,7 +129,7 @@ export default function Announcements() {
 
                                 <div className=' w-full h-full flex flex-col gap-2 p-4 text-xs'>
                                     {/* <p className=' flex items-center gap-1 text-pink-500 text-[.6rem]'><MapPin size={12}/>December 15, 2024</p> */}
-                                    <a href={`/news/${list[2]?.title}`} className=' text-lg font-medium underline'>{list[2]?.title}</a>
+                                    <a href={`/news?id=${list[0]?.title}`} className=' text-lg font-medium underline'>{list[2]?.title}</a>
                                     <p className=' text-zinc-500 text-xs'>Published by: {list[2]?.writer}</p>
                                     {/* <p className=' text-zinc-500 whitespace-pre-line'>{list[2]?.content.slice(0,100)} ...</p> */}
                                 </div>
@@ -161,7 +161,7 @@ export default function Announcements() {
                         </div>
 
                         <div className=' w-full h-full flex flex-col gap-2 p-4 text-xs'>
-                            <a href={`/news/${list[0]?.title}`} className=' text-lg font-medium underline'>{list[0]?.title}</a>
+                            <a href={`/news?id=${list[0]?.title}`} className=' text-lg font-medium underline'>{list[0]?.title}</a>
                             <p className=' text-zinc-500 text-xs'>Published by: {list[0]?.writer}</p>
                         </div>
 
@@ -179,7 +179,7 @@ export default function Announcements() {
                         </div>
 
                         <div className=' w-full h-full flex flex-col gap-2 p-4 text-xs'>
-                            <a href={`/news/${list[0]?.title}`} className=' text-lg font-medium underline'>{list[1]?.title}</a>
+                            <a href={`/news?id=${list[0]?.title}`} className=' text-lg font-medium underline'>{list[1]?.title}</a>
                             <p className=' text-zinc-500 text-xs'>Published by: {list[1]?.writer}</p>
                         </div>
 
@@ -203,7 +203,7 @@ export default function Announcements() {
                         </div>
 
                         <div className=' w-full h-full flex flex-col gap-2 p-4 text-xs'>
-                            <a href={`/news/${list[0]?.title}`} className=' text-lg font-medium underline'>{list[0]?.title}</a>
+                            <a href={`/news?id=${list[0]?.title}`} className=' text-lg font-medium underline'>{list[0]?.title}</a>
                             <p className=' text-zinc-500 text-xs'>Published by: {list[0]?.writer}</p>
                         </div>
 
@@ -229,7 +229,7 @@ export default function Announcements() {
                         </div>
 
                         <div className=' w-full h-full flex flex-col gap-2 p-4 text-xs'>
-                            <a href={`/news/${list[0]?.title}`} className=' text-lg font-medium underline'>{list[0]?.title}</a>
+                            <a href={`/news?id=${list[0]?.title}`} className=' text-lg font-medium underline'>{list[0]?.title}</a>
                             <p className=' text-zinc-500 text-xs'>Published by: {list[0]?.writer}</p>
                         </div>
 
@@ -252,7 +252,7 @@ export default function Announcements() {
 
                                 <div className=' w-full h-full flex flex-col gap-2 p-4 text-xs'>
                                     {/* <p className=' flex items-center gap-1 text-pink-500 text-[.6rem]'><MapPin size={12}/>December 15, 2024</p> */}
-                                    <a href={`/news/${list[1]?.title}`} className=' text-lg font-medium underline'>{list[1]?.title}</a>
+                                    <a href={`/news?id=${list[1]?.title}`} className=' text-lg font-medium underline'>{list[1]?.title}</a>
                                     <p className=' text-zinc-500 text-xs'>Published by: {list[1]?.writer}</p>
 
                                     {/* <p className=' text-zinc-500 whitespace-pre-line'>{list[1]?.content.slice(0,100)} ...</p> */}
@@ -273,7 +273,7 @@ export default function Announcements() {
 
                                 <div className=' w-full h-full flex flex-col gap-2 p-4 text-xs'>
                                     {/* <p className=' flex items-center gap-1 text-pink-500 text-[.6rem]'><MapPin size={12}/>December 15, 2024</p> */}
-                                    <a href={`/news/${list[2]?.title}`} className=' text-lg font-medium underline'>{list[2]?.title}</a>
+                                    <a href={`/news?id=${list[2]?.title}`} className=' text-lg font-medium underline'>{list[2]?.title}</a>
                                     <p className=' text-zinc-500 text-xs'>Published by: {list[2]?.writer}</p>
                                     {/* <p className=' text-zinc-500 whitespace-pre-line'>{list[2]?.content.slice(0,100)} ...</p> */}
                                 </div>

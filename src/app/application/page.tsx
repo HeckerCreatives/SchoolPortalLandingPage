@@ -209,7 +209,6 @@ export default function Home() {
           bc: bcFile,
           program: formData?.program,
           level: formData?.gradelevel,
-          tor: '',
 
           mfirstname: formData?.motherfirstname,
           mlastname: formData?.motherlastnamename,

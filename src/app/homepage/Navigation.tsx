@@ -67,7 +67,7 @@ export default function Navigation() {
                 <a href="/#news" className={`' hover:text-pink-600' ${path.includes('/news') && 'text-pink-600'}`}>News</a>
                 <a href="/#about" className={`' hover:text-pink-600' ${path.includes('/about') && 'text-pink-600'}`}>About Us</a>
 
-                <button className=' border-[1px] border-pink-600 bg-pink-600 text-white px-6 py-2 text-sm font-medium '>Enroll Now</button>
+                <a href='https://schoolportaldashboard.onrender.com/' className=' border-[1px] border-pink-600 bg-pink-600 text-white px-6 py-2 text-sm font-medium '>Enroll Now</a>
 
 
                 {/* <a href="/applicationportal/signin" className='order-[1px] border-pink-600 bg-pink-600 text-white px-6 py-2 text-sm font-medium rounded-sm flex items-center gap-1'>Login <LogIn size={15}/></a> */}

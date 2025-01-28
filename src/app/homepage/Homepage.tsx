@@ -26,7 +26,7 @@ export default function Homepage() {
             <p className=' max-w-[600px] text-center text-zinc-100'>Providing Excellence in Education, Innovation, and Character Development for the Leaders of Tomorrow.</p>
 
             <div className=' w-full flex items-center justify-center gap-4 mt-8'>
-                <button className=' border-[1px] border-pink-600 bg-pink-600 text-white px-6 py-2 text-sm font-medium '>Enroll Now</button>
+                <a href='https://schoolportaldashboard.onrender.com/' className=' border-[1px] border-pink-600 bg-pink-600 text-white px-6 py-2 text-sm font-medium '>Enroll Now</a>
                 <a href='/application' className='border-[1px] border-pink-600 text-white px-6 py-2 text-sm font-medium '>Apply Now</a>
             </div>
            

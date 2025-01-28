@@ -149,6 +149,7 @@ export default function Home() {
 
   const [ticket, setTicket] = useState<Ticket>()
   const [selectedprogram, setSelectedProgram] = useState('')
+  const [selectedLevel, setSelectedLevel] = useState('')
   const [program, setProgram] = useState<Program[]>([])
   const [level, setLevel] = useState<Level[]>([])
 
@@ -168,7 +169,8 @@ export default function Home() {
       program:'',
       gradelevel: '',
       form137: null,  // Correct default value for form137
-      bc: null,       // Correct default value for bc
+      bc: null,  
+           // Correct default value for bc
     },
   });
   
@@ -190,7 +192,7 @@ export default function Home() {
           }
         })
         .catch(console.error);
-    } else {
+    } else if (formData?.gradelevel !== '' && formData?.program !== '') {
       console.log('Final data:', { ...formData, ...data }); // Log all collected data
       try {
         const request = axios.post(`${process.env.NEXT_PUBLIC_URL}/requirement/submitrequirement`,{
@@ -207,8 +209,8 @@ export default function Home() {
           telephonenumber: formData?.telephone,
           form: form137File,
           bc: bcFile,
-          program: formData?.program,
-          level: formData?.gradelevel,
+          program: selectedprogram,
+          level: selectedLevel,
 
           mfirstname: formData?.motherfirstname,
           mlastname: formData?.motherlastnamename,
@@ -617,7 +619,7 @@ const handleBcChange = (e: React.ChangeEvent<HTMLInputElement>) => {
             {step === 3 && (
               <div className=" w-full flex flex-col">
                   <p className=" text-black font-medium text-sm">Program <span className=" text-red-600">*</span></p>
-                  <Select onValueChange={(value) => {setValue('program', value)}} {...methods.register('program')}>
+                  <Select onValueChange={(value) => {setValue('program', value), setSelectedProgram(value)}} {...methods.register('program')}>
                   <SelectTrigger className=" input-primary">
                     <SelectValue placeholder="Select Program" />
                   </SelectTrigger>
@@ -632,7 +634,7 @@ const handleBcChange = (e: React.ChangeEvent<HTMLInputElement>) => {
                   <p className=" text-[.6rem] text-red-500">{formState.errors.program?.message}</p>
 
                   <p className=" text-black font-medium text-sm mt-2">Grade Levels <span className=" text-red-600">*</span></p>
-                  <Select onValueChange={(value) => setValue('gradelevel', value)} {...methods.register('gradelevel')}>
+                  <Select onValueChange={(value) => {setValue('gradelevel', value), setSelectedLevel(value)}} {...methods.register('gradelevel')}>
                   <SelectTrigger className=" input-primary">
                     <SelectValue placeholder="Select Grade Levels" />
                   </SelectTrigger>
